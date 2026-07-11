@@ -488,11 +488,11 @@
   <div style="max-width:1120px;margin:0 auto;padding:48px 24px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start">
     <div>
       <p style="margin:0 0 10px;font-family:Inter,'Noto Sans JP',sans-serif;font-weight:800;letter-spacing:0.06em;color:#FFFFFF;font-size:17px">UMITO</p>
-      <p style="margin:0;font-size:12px;line-height:2;color:rgba(255,255,255,0.6)">屋号：UMITO（仮）<br>所在地：大阪府松原市上田<br>お問い合わせ：after.motion018@gmail.com<br></p>
+      <p style="margin:0;font-size:12px;line-height:2;color:rgba(255,255,255,0.6)">屋号：UMITO（仮）<br>所在地：大阪府松原市上田<br>お問い合わせ：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c7d7a68796e327173687573722c2d245c7b717d7570327f7371">[email&#160;protected]</a><br></p>
     </div>
     <nav style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center">
       <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>Instagram</a>
-      <a href="mailto:after.motion018@gmail.com" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>メール</a>
+      <a href="/cdn-cgi/l/email-protection#4d2c2b39283f632022392422237d7c750d2a202c2421632e2220" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>メール</a>
       <a href="#" style="font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF">プライバシーポリシー</a>
       <a href="#" style="font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF">利用規約</a>
     </nav>
@@ -502,7 +502,7 @@
 
 <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
   <div onClick="{{ closeVideo }}" style="position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.82);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px">
-    <div style="position:relative;width:min(340px,86vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)">
+    <div onClick="{{ stopClick }}" style="position:relative;width:min(340px,86vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)">
       <video id="lightbox-video" controls="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="auto" poster="{{ lightboxPoster }}" src="{{ lightboxSrc }}" style="width:100%;height:100%;object-fit:cover;background:#000000"></video>
     </div>
     <button onClick="{{ closeVideo }}" aria-label="閉じる" style="position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.16);border:none;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,0.28)">
@@ -519,7 +519,7 @@
 </sc-if>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script data-props="{
   &quot;heroOverlay&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 0.28, &quot;min&quot;: 0.15, &quot;max&quot;: 0.6, &quot;step&quot;: 0.02, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Hero&quot;, &quot;unit&quot;: &quot;&quot;},
   &quot;showFloatingCta&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;CTA&quot;}
 }">
@@ -572,6 +572,7 @@ class Component extends DCLogic {
       heroOverlayBottom: Math.min(0.85, base + 0.25).toFixed(2),
       showFloating: this.props.showFloatingCta ?? true,
       lightboxOpen: !!this.state.video,
+      stopClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
       lightboxSrc: this.state.video ? this.state.video.src : '',
       lightboxPoster: this.state.video ? this.state.video.poster : '',
       openDiving: () => this.setState({ video: { src: 'uploads/CLAUDE_SITE_assyuku.mp4', poster: 'thumbs/diving_new.png' } }),
