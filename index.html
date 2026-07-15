@@ -227,25 +227,6 @@
         </div>
       </div>
 
-      <div class="work-card" onClick="{{ openHf }}" role="button" tabIndex="0" aria-label="動画サンプルを再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
-        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/hf.png') center/cover">
-          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
-            ショート
-          </div>
-          <div style="position:absolute;top:12px;right:12px;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:999px;background:#2563EB;color:#FFFFFF;font-size:10px;font-weight:700;letter-spacing:0.04em;box-shadow:0 4px 12px rgba(37,99,235,0.4)">
-            <span style="width:6px;height:6px;border-radius:50%;background:#FFFFFF"></span>実際の動画
-          </div>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
-            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-          </div>
-        </div>
-        <div style="padding:14px 15px 16px">
-          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">フック検証用のバリエーション</p>
-          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">導入パターンを変えた比較例</p>
-        </div>
-      </div>
-
     </div>
     <div style="display:flex;justify-content:center;margin-top:48px">
       <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;min-height:52px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.28)" style-hover="background:#1D4ED8;color:#FFFFFF">
@@ -667,7 +648,6 @@ class Component extends DCLogic {
       openKeshosui: () => this.playLightbox('uploads/keshosui.mp4', 'thumbs/keshosui.png'),
       openHifumiru: () => this.playLightbox('uploads/hifumiru.mp4', 'thumbs/hifumiru.png'),
       openComp: () => this.playLightbox('uploads/comp.mp4', 'thumbs/comp.png'),
-      openHf: () => this.playLightbox('uploads/hf_20260627_175944_a7e5ee76-323e-4d1c-9e08-db7612c4174b.mp4', 'thumbs/hf.png'),
       closeVideo: () => {
         const v = document.getElementById('lightbox-video');
         if (v) { try { v.pause(); } catch (e) {} }
