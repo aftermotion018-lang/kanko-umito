@@ -648,11 +648,7 @@ class Component extends DCLogic {
         ? 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:1;pointer-events:auto;transition:opacity 0.2s ease'
         : 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.2s ease',
       lightboxPoster: this.state.video ? this.state.video.poster : '',
-      openDriveTop: () => {
-        const v = document.getElementById('lightbox-video');
-        if (v) { try { v.pause(); } catch (e) {} }
-        this.setState({ video: { drive: true, id: '15UtoJKohD6Bk10LUcbU1YjhV6DuVwLFG' } });
-      },
+      openDriveTop: () => this.playLightbox('uploads/SITE-v02.mp4', ''),
       openDiving: () => this.playLightbox('uploads/CLAUDE_SITE_assyuku.mp4', 'thumbs/diving_new.png'),
       openCola: () => this.playLightbox('uploads/cola_comp.mp4', 'thumbs/cola.png'),
       openKeshosui: () => this.playLightbox('uploads/keshosui.mp4', 'thumbs/keshosui.png'),
