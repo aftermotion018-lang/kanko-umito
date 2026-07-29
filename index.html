@@ -545,12 +545,7 @@
 
 <div onClick="{{ closeVideo }}" style="{{ lightboxWrapStyle }}">
   <div onClick="{{ stopClick }}" style="position:relative;width:min(340px,86vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)">
-    <sc-if value="{{ lightboxIsVideo }}" hint-placeholder-val="{{ true }}">
-      <video id="lightbox-video" controls="{{ true }}" playsInline="{{ true }}" preload="auto" poster="{{ lightboxPoster }}" style="width:100%;height:100%;object-fit:cover;background:#000000"></video>
-    </sc-if>
-    <sc-if value="{{ lightboxIsDrive }}" hint-placeholder-val="{{ false }}">
-      <iframe src="{{ driveEmbedSrc }}" style="width:100%;height:100%;border:none;background:#000000" allow="autoplay" allowFullScreen="{{ true }}"></iframe>
-    </sc-if>
+    <video id="lightbox-video" controls="{{ true }}" playsInline="{{ true }}" preload="auto" poster="{{ lightboxPoster }}" style="width:100%;height:100%;object-fit:cover;background:#000000"></video>
   </div>
   <button onClick="{{ closeVideo }}" aria-label="閉じる" style="position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.16);border:none;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,0.28)">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
@@ -639,9 +634,6 @@ class Component extends DCLogic {
       heroOverlayBottom: Math.min(0.85, base + 0.25).toFixed(2),
       showFloating: this.props.showFloatingCta ?? true,
       lightboxOpen: !!this.state.video,
-      lightboxIsDrive: !!(this.state.video && this.state.video.drive),
-      lightboxIsVideo: !!(this.state.video && !this.state.video.drive),
-      driveEmbedSrc: (this.state.video && this.state.video.drive) ? ('https://drive.google.com/file/d/' + this.state.video.id + '/preview') : '',
       stopClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
       lightboxWrapStyle: this.state.video
         ? 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:1;pointer-events:auto;transition:opacity 0.2s ease'
