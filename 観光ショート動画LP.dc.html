@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<title>motion-hook｜SNS広告・ショート動画制作・フック設計</title>
+<meta name="description" content="motion-hook｜SNS広告・PR動画向けに、冒頭のフックから設計する縦型ショート動画を制作。フック違いの複数パターンで広告テストにも対応。ご相談・お見積りは無料です。">
+<meta property="og:title" content="motion-hook｜フックから設計するショート広告動画制作">
+<meta property="og:description" content="同じ商材でも、冒頭のフック次第で反応は大きく変わります。複数のフックパターンを企画・制作し、広告テストにも使える縦型ショート動画をご提供します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://motion-hook.com/">
+<meta property="og:site_name" content="motion-hook">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://motion-hook.com/thumbs/diving_new.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="motion-hook｜フックから設計するショート広告動画制作">
+<meta name="twitter:description" content="複数のフックパターンを企画・制作し、広告テストにも使える縦型ショート動画をご提供します。">
+<meta name="twitter:image" content="https://motion-hook.com/thumbs/diving_new.png">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0F172A">
+<link rel="canonical" href="https://motion-hook.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"motion-hook","url":"https://motion-hook.com/"},
+{"@type":"Service","name":"motion-hook SNS広告・ショート動画制作","serviceType":"動画制作・フック設計・SNS運用サポート","areaServed":"日本","url":"https://motion-hook.com/","provider":{"@type":"Organization","name":"motion-hook","url":"https://motion-hook.com/"},"audience":{"@type":"Audience","audienceType":"美容・コスメ・飲食・店舗・EC・アプリ・観光など、SNS広告やPR動画を活用したい事業者"},"description":"Instagramリール・TikTok・YouTube Shorts向けの縦型ショート動画を、冒頭のフック設計から企画・制作。フック違いの複数パターンで広告ABテストにも対応。"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"AI動画は不自然になりませんか？","acceptedAnswer":{"@type":"Answer","text":"実写の素材と組み合わせ、違和感のない仕上がりになるよう調整します。事前にサンプルをご確認いただけます。"}},
+{"@type":"Question","name":"撮影は必要ですか？","acceptedAnswer":{"@type":"Answer","text":"お手持ちの写真や動画素材からも制作できます。スマホで撮影した素材でも大丈夫です。"}},
+{"@type":"Question","name":"修正はできますか？","acceptedAnswer":{"@type":"Answer","text":"はい、対応いたします。修正の回数や範囲は事前のお見積り時にすり合わせのうえ進めます。"}},
+{"@type":"Question","name":"SNSの投稿も相談できますか？","acceptedAnswer":{"@type":"Answer","text":"投稿文・ハッシュタグ・投稿のタイミングなど、SNS活用のご相談も可能です。"}},
+{"@type":"Question","name":"納期はどのくらいですか？","acceptedAnswer":{"@type":"Answer","text":"内容にもよりますが、目安は1〜2週間程度です。お急ぎの場合はご相談ください。"}},
+{"@type":"Question","name":"料金はどのくらいですか？","acceptedAnswer":{"@type":"Answer","text":"本数や内容に応じて個別にお見積りしています。無料相談時にご予算に合わせたプランをご提示します。"}},
+{"@type":"Question","name":"SNSや動画が初めてでも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"大丈夫です。ヒアリングから納品まで、専門用語を使わず丁寧にご説明しながら進めます。"}},
+{"@type":"Question","name":"どの業種に対応していますか？","acceptedAnswer":{"@type":"Answer","text":"美容・コスメ・飲食・店舗・EC・アプリ・観光施設など、SNS広告やPR動画を活用したい事業者様に幅広く対応しています。"}}
+]}]}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'Noto Sans JP', 'Inter', 'Hiragino Sans', sans-serif; color: #222222; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+  a { color: #2563EB; }
+  a:hover { color: #1D4ED8; }
+  svg { display: block; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  details[open] summary span[data-faq-icon] svg { transform: rotate(45deg); }
+  @keyframes heroRise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
+  .hero-rise-1 { animation: heroRise 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+  .hero-rise-2 { animation: heroRise 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s both; }
+  .hero-rise-3 { animation: heroRise 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s both; }
+  .hero-rise-4 { animation: heroRise 0.9s cubic-bezier(0.22,1,0.36,1) 0.75s both; }
+  .hero-vid { animation: heroFade 1.4s ease both; }
+  @keyframes markerGlow { 0% { text-shadow: 0 0 0 rgba(125,180,255,0); } 50% { text-shadow: 0 0 24px rgba(125,180,255,0.75); } 100% { text-shadow: 0 0 10px rgba(125,180,255,0.35); } }
+  .hero-marker { display: inline-block; padding: 0 2px; animation: markerGlow 1.6s ease 1.7s forwards; }
+  @keyframes charIn { 0% { opacity: 0; transform: translateY(0.55em) scale(0.8); filter: blur(6px); } 60% { opacity: 1; transform: translateY(-0.06em) scale(1.04); filter: blur(0); } 100% { opacity: 1; transform: none; filter: blur(0); } }
+  .hero-char { display: inline-block; opacity: 0; animation: charIn 0.55s cubic-bezier(0.22,1,0.36,1) forwards; }
+  .hero-line { display: inline-block; }
+  .work-card { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  @media (min-width: 960px) { .reason-sticky { position: sticky; top: 110px; } }
+  @media (max-width: 640px) {
+    .float-cta { left: 16px !important; right: 16px !important; bottom: calc(12px + env(safe-area-inset-bottom)) !important; width: auto; justify-content: center !important; font-size: 16px !important; }
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .hero-cta a { width: 100%; box-sizing: border-box; }
+    .hero-br { display: none; }
+    .page-footer { padding-bottom: 92px !important; }
+  }
+  .work-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(15,23,42,0.16); }
+  .work-card:hover [data-play] { transform: scale(1.08); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .work-card { transition: none; } .hero-rise-1, .hero-rise-2, .hero-rise-3, .hero-rise-4, .hero-vid { animation: none; } .hero-marker { animation: none; } .hero-char { animation: none; opacity: 1; } }
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(15,23,42,0.06)">
+  <div style="max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <div style="display:flex;align-items:baseline;gap:10px">
+      <span style="font-family:Inter,'Noto Sans JP',sans-serif;font-weight:800;letter-spacing:0.04em;color:#0F172A;font-size:18px">motion-hook</span>
+      <span style="font-size:11px;color:#64748B;letter-spacing:0.04em">SNS広告・ショート動画制作</span>
+    </div>
+    <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:7px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:14px;padding:10px 20px;border-radius:999px;text-decoration:none;min-height:44px;box-sizing:border-box" style-hover="background:#1D4ED8;color:#FFFFFF">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+      無料相談する
+    </a>
+  </div>
+</header>
+
+<section data-screen-label="Hero" style="position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0F172A">
+  <video id="hero-video" class="hero-vid" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" poster="thumbs/hotel.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <source src="uploads/HIRO_MOVIE02.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,23,42,{{ heroOverlayTop }}) 0%, rgba(15,23,42,{{ heroOverlay }}) 55%, rgba(15,23,42,{{ heroOverlayBottom }}) 100%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:880px;margin:0 auto;padding:120px 24px 108px;text-align:center;color:#FFFFFF;pointer-events:none">
+    <p class="hero-rise-1" style="display:inline-flex;align-items:center;gap:8px;margin:0 0 26px;padding:8px 18px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.08em;background:rgba(15,23,42,0.28)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>
+      SNS広告向け｜縦型ショート動画
+    </p>
+    <h1 class="hero-rise-2" style="margin:0 0 24px;font-size:clamp(25px,5.6vw,56px);line-height:1.52;font-weight:900;letter-spacing:0.02em"><span class="hero-line">最初の2秒で心を掴む</span><br class="hero-br"><span class="hero-line"><span style="color:#FFFFFF">「フック」</span>から設計する</span><br class="hero-br"><span class="hero-line">ショート動画を制作します　　</span></h1>
+    <p class="hero-rise-3" style="margin:0 auto 40px;max-width:640px;font-size:clamp(14px,2.4vw,17px);line-height:2;color:rgba(255,255,255,0.92);text-wrap:pretty"><span class="hero-line">同じ商材でも、</span><span class="hero-line">冒頭のフック次第で反応は大きく変わります。</span><br class="hero-br"><span class="hero-line">複数のフックパターンを企画・制作し、</span><span class="hero-line">広告テストにも活かせる動画をご提案します。</span></p>
+
+    <div class="hero-rise-4 hero-cta" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;pointer-events:auto;max-width:420px;margin:0 auto">
+      <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:16px;padding:16px 32px;border-radius:999px;text-decoration:none;min-height:54px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.4)" style-hover="background:#1D4ED8;color:#FFFFFF">
+        無料相談する
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a href="#works" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;border:1px solid rgba(255,255,255,0.6);color:#FFFFFF;background:rgba(255,255,255,0.08);font-weight:700;font-size:16px;padding:16px 32px;border-radius:999px;text-decoration:none;min-height:54px;box-sizing:border-box" style-hover="background:rgba(255,255,255,0.2);color:#FFFFFF">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        制作サンプルを見る
+      </a>
+    </div>
+    <p class="hero-rise-4" style="margin:18px 0 0;font-size:12px;color:rgba(255,255,255,0.85);letter-spacing:0.04em;display:flex;align-items:center;gap:7px;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="m9 11 3 3L22 4"></path></svg>ご相談・お見積り無料｜押し売りは一切いたしません</p>
+  </div>
+</section>
+
+<section id="works" data-screen-label="サンプル制作" style="background:#FFFFFF">
+  <div style="max-width:1120px;margin:0 auto;padding:100px 24px" data-reveal="works">
+    <p style="margin:0 0 12px;text-align:center;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif">PORTFOLIO</p>
+    <h2 style="margin:0 0 16px;text-align:center;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em">制作サンプル</h2>
+    <p style="margin:0 auto 56px;max-width:560px;text-align:center;font-size:15px;line-height:2;color:#555555">SNSで使える縦型ショート動画の制作サンプルです。タップすると再生できます。</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),260px));gap:28px;max-width:880px;margin:0 auto;justify-content:center">
+
+      <div class="work-card" onClick="{{ openDriveTop }}" role="button" tabIndex="0" aria-label="Clazzioシートカバー紹介動画を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A">
+          <image-slot id="work-drive-thumb" shape="rect" placeholder="サムネイル画像" style="position:absolute;inset:0"></image-slot>
+          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+            カー用品
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </div>
+        </div>
+        <div style="padding:14px 15px 16px">
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">Clazzioシートカバー紹介</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">質感と装着感が伝わる商品紹介ショート</p>
+        </div>
+      </div>
+
+      <div class="work-card" onClick="{{ openDiving }}" role="button" tabIndex="0" aria-label="ダイビング動画を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/diving_new.png') center/cover">
+          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"></path><path d="M18 12v.5"></path><path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"></path><path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"></path><path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4"></path><path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98"></path></svg>
+            ダイビング
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </div>
+        </div>
+        <div style="padding:14px 15px 16px">
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">体験ダイビングの水中ハイライト</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">ウミガメと出会う透明度の高い海</p>
+        </div>
+      </div>
+
+      <div class="work-card" onClick="{{ openCola }}" role="button" tabIndex="0" aria-label="コーラ動画を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/cola.png') center/cover">
+          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"></path><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"></path><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"></path></svg>
+            ドリンク
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </div>
+        </div>
+        <div style="padding:14px 15px 16px">
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">ドリンク商品のシズル演出</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">思わず飲みたくなるショート広告</p>
+        </div>
+      </div>
+
+      <div class="work-card" onClick="{{ openKeshosui }}" role="button" tabIndex="0" aria-label="化粧水動画を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/keshosui.png') center/cover">
+          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+            コスメ
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </div>
+        </div>
+        <div style="padding:14px 15px 16px">
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">スキンケア商品の訴求リール</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">使用感を伝える化粧水プロモーション</p>
+        </div>
+      </div>
+
+      <div class="work-card" onClick="{{ openHifumiru }}" role="button" tabIndex="0" aria-label="スキンケア動画を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/hifumiru.png') center/cover">
+          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            スキンケア
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </div>
+        </div>
+        <div style="padding:14px 15px 16px">
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">肌ケアサービスの紹介動画</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">機能と安心感を伝えるショート</p>
+        </div>
+      </div>
+
+      <div class="work-card" onClick="{{ openComp }}" role="button" tabIndex="0" aria-label="動画サンプルを再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/comp.png') center/cover">
+          <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
+            ショート
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </div>
+        </div>
+        <div style="padding:14px 15px 16px">
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">フック重視のショート広告</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">冒頭3秒で引き込む構成例</p>
+        </div>
+      </div>
+
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:48px">
+      <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;min-height:52px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.28)" style-hover="background:#1D4ED8;color:#FFFFFF">
+        こんな動画を相談する
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="課題" style="background:#F8F6F2">
+  <div style="max-width:1000px;margin:0 auto;padding:100px 24px" data-reveal="problems">
+    <p style="margin:0 0 12px;text-align:center;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif">PROBLEM</p>
+    <h2 style="margin:0 0 56px;text-align:center;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em">こんなお悩みはありませんか？</h2>
+    <div style="max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:32px 28px">
+      <div style="display:flex;flex-direction:column">
+        <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:24px 26px;box-shadow:0 6px 24px rgba(15,23,42,0.06);flex:1">
+          <p style="margin:0;font-size:15px;font-weight:700;color:#0F172A;line-height:1.9">「SNSが大事なのは分かってる。でも、<span style="color:#2563EB">投稿が続かない</span>んです…」</p>
+          <span style="position:absolute;bottom:-8px;left:36px;width:18px;height:18px;background:#FFFFFF;transform:rotate(45deg);border-radius:3px"></span>
+        </div>
+        <p style="margin:18px 0 0 30px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#64748B"><span style="width:34px;height:34px;border-radius:50%;background:#EFF3FE;color:#2563EB;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 22v-6.57"></path><path d="M12 11h.01"></path><path d="M12 7h.01"></path><path d="M14 15.43V22"></path><path d="M15 16a5 5 0 0 0-6 0"></path><path d="M16 11h.01"></path><path d="M16 7h.01"></path><path d="M8 11h.01"></path><path d="M8 7h.01"></path><rect x="4" y="2" width="16" height="20" rx="2"></rect></svg></span>コスメブランド・担当者</p>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:24px 26px;box-shadow:0 6px 24px rgba(15,23,42,0.06);flex:1">
+          <p style="margin:0;font-size:15px;font-weight:700;color:#0F172A;line-height:1.9">「写真だけでは、商品の<span style="color:#2563EB">本当の魅力が伝わらない</span>…」</p>
+          <span style="position:absolute;bottom:-8px;left:36px;width:18px;height:18px;background:#FFFFFF;transform:rotate(45deg);border-radius:3px"></span>
+        </div>
+        <p style="margin:18px 0 0 30px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#64748B"><span style="width:34px;height:34px;border-radius:50%;background:#EFF3FE;color:#2563EB;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg></span>飲食店・オーナー</p>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:24px 26px;box-shadow:0 6px 24px rgba(15,23,42,0.06);flex:1">
+          <p style="margin:0;font-size:15px;font-weight:700;color:#0F172A;line-height:1.9">「動画がいいのは分かるけど、<span style="color:#2563EB">撮る時間も作れる人もいない</span>…」</p>
+          <span style="position:absolute;bottom:-8px;left:36px;width:18px;height:18px;background:#FFFFFF;transform:rotate(45deg);border-radius:3px"></span>
+        </div>
+        <p style="margin:18px 0 0 30px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#64748B"><span style="width:34px;height:34px;border-radius:50%;background:#EFF3FE;color:#2563EB;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 21 14 3"></path><path d="M20.5 21 10 3"></path><path d="M15.5 21 12 15l-3.5 6"></path><path d="M2 21h20"></path></svg></span>ＥＣ・マーケター</p>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:24px 26px;box-shadow:0 6px 24px rgba(15,23,42,0.06);flex:1">
+          <p style="margin:0;font-size:15px;font-weight:700;color:#0F172A;line-height:1.9">「いい商品なのに、<span style="color:#2563EB">まだ知られていない</span>のがもったいない…」</p>
+          <span style="position:absolute;bottom:-8px;left:36px;width:18px;height:18px;background:#FFFFFF;transform:rotate(45deg);border-radius:3px"></span>
+        </div>
+        <p style="margin:18px 0 0 30px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;color:#64748B"><span style="width:34px;height:34px;border-radius:50%;background:#EFF3FE;color:#2563EB;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"></path><path d="M5 20V8.2a2 2 0 0 1 .59-1.42l5-4.99a2 2 0 0 1 2.82 0l5 4.99A2 2 0 0 1 19 8.2V20"></path><path d="M9 20v-5a3 3 0 0 1 6 0v5"></path></svg></span>ブランド・マネージャー</p>
+      </div>
+    </div>
+    <div style="margin:56px auto 0;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <span style="color:#2563EB"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+      <p style="margin:0;max-width:640px;text-align:center;font-size:clamp(17px,3vw,22px);font-weight:700;color:#0F172A;line-height:2">その課題、<span style="background:linear-gradient(transparent 68%, rgba(37,99,235,0.25) 68%);padding:0 2px">ショート動画</span>が解決の入り口になります。</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="サービス" style="background:#FFFFFF">
+  <div style="max-width:1120px;margin:0 auto;padding:100px 24px" data-reveal="services">
+    <p style="margin:0 0 12px;text-align:center;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"></path><path d="m6.2 5.3 3.1 3.9"></path><path d="m12.4 3.4 3.1 4"></path><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg>
+      SERVICE
+    </p>
+    <h2 style="margin:0 0 16px;text-align:center;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em">ご提供できること</h2>
+    <p style="margin:0 auto 56px;max-width:600px;text-align:center;font-size:15px;line-height:2;color:#555555">主要なSNSに合わせた縦型ショート動画を、企画から納品までお任せいただけます。同じ企画でもフック違いの複数パターンを制作でき、広告のABテストにも使えます。</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px;margin-bottom:18px">
+      <div style="background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:20px;padding:32px 28px;box-shadow:0 6px 24px rgba(15,23,42,0.05)">
+        <div style="width:48px;height:48px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></div>
+        <p style="margin:0 0 8px;font-size:17px;font-weight:700;color:#0F172A">Instagramリール</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">商品やサービスの魅力を、短く魅力的に。広告としても最も反応が見込める場所です。</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:20px;padding:32px 28px;box-shadow:0 6px 24px rgba(15,23,42,0.05)">
+        <div style="width:48px;height:48px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div>
+        <p style="margin:0 0 8px;font-size:17px;font-weight:700;color:#0F172A">TikTok</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">若い世代に届くテンポの良い動画。まだ知られていない商材との相性は抜群です。</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:20px;padding:32px 28px;box-shadow:0 6px 24px rgba(15,23,42,0.05)">
+        <div style="width:48px;height:48px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:18px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 7 5 3-5 3Z"></path><rect width="20" height="14" x="2" y="3" rx="2"></rect><path d="M12 17v4"></path><path d="M8 21h8"></path></svg></div>
+        <p style="margin:0 0 8px;font-size:17px;font-weight:700;color:#0F172A">YouTube Shorts</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">検索からの流入も意識した縦型動画。購入前の下調べで見つけてもらえます。</p>
+      </div>
+    </div>
+    <p style="margin:0 0 16px;text-align:center;font-size:13px;font-weight:700;color:#94A3B8;letter-spacing:0.06em">そのほかの対応内容</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;background:#EFF3FE;font-size:13px;font-weight:700;color:#2563EB"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>フック違いの複数パターン制作</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;background:#EFF3FE;font-size:13px;font-weight:700;color:#2563EB"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>広告ABテスト用動画</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;background:#F8F6F2;font-size:13px;font-weight:600;color:#334155"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>縦型動画</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;background:#F8F6F2;font-size:13px;font-weight:600;color:#334155"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line></svg>ナレーション</span>
+    </div>
+    <p style="margin:18px auto 0;max-width:620px;text-align:center;font-size:12px;line-height:1.9;color:#94A3B8">実写素材と組み合わせたAI映像技術で自然に補います。制作工程の効率化により、1本あたりのコストを抑えたご提案が可能です。</p>
+    <div style="display:flex;justify-content:center;margin-top:48px">
+      <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;min-height:52px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.28)" style-hover="background:#1D4ED8;color:#FFFFFF">
+        できることを相談する
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="制作の流れ" style="background:#F8F6F2">
+  <div style="max-width:1120px;margin:0 auto;padding:100px 24px" data-reveal="flow">
+    <p style="margin:0 0 12px;text-align:center;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif">FLOW</p>
+    <h2 style="margin:0 0 16px;text-align:center;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em">制作の流れ</h2>
+    <p style="margin:0 auto 64px;max-width:520px;text-align:center;font-size:15px;line-height:2;color:#555555">お問い合わせから納品まで、5つのステップ。初めての方でも迷わず進められます。</p>
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,45%),1fr));gap:14px">
+      <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:28px 22px 26px;box-shadow:0 4px 20px rgba(15,23,42,0.05)">
+        <span style="position:absolute;top:16px;right:20px;font-family:Inter,sans-serif;font-weight:800;font-size:38px;line-height:1;color:rgba(37,99,235,0.12)">01</span>
+        <div style="width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></div>
+        <p style="margin:0 0 6px;font-size:16px;font-weight:700;color:#0F172A">お問い合わせ</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">フォームやInstagramのDMからお気軽に。</p>
+      </div>
+      <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:28px 22px 26px;box-shadow:0 4px 20px rgba(15,23,42,0.05)">
+        <span style="position:absolute;top:16px;right:20px;font-family:Inter,sans-serif;font-weight:800;font-size:38px;line-height:1;color:rgba(37,99,235,0.12)">02</span>
+        <div style="width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg></div>
+        <p style="margin:0 0 6px;font-size:16px;font-weight:700;color:#0F172A">ヒアリング</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">商材の魅力・課題・伝えたい相手をお聞きします。</p>
+      </div>
+      <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:28px 22px 26px;box-shadow:0 4px 20px rgba(15,23,42,0.05)">
+        <span style="position:absolute;top:16px;right:20px;font-family:Inter,sans-serif;font-weight:800;font-size:38px;line-height:1;color:rgba(37,99,235,0.12)">03</span>
+        <div style="width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></div>
+        <p style="margin:0 0 6px;font-size:16px;font-weight:700;color:#0F172A">構成のご提案</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">企画・構成にご納得いただいてから制作へ。</p>
+      </div>
+      <div style="position:relative;background:#FFFFFF;border-radius:20px;padding:28px 22px 26px;box-shadow:0 4px 20px rgba(15,23,42,0.05)">
+        <span style="position:absolute;top:16px;right:20px;font-family:Inter,sans-serif;font-weight:800;font-size:38px;line-height:1;color:rgba(37,99,235,0.12)">04</span>
+        <div style="width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg></div>
+        <p style="margin:0 0 6px;font-size:16px;font-weight:700;color:#0F172A">制作・修正</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#555555">ご確認いただきながら丁寧に仕上げます。</p>
+      </div>
+      <div style="position:relative;background:#EFF3FE;border:1px solid rgba(37,99,235,0.18);border-radius:20px;padding:28px 22px 26px;box-shadow:0 4px 20px rgba(37,99,235,0.08)">
+        <span style="position:absolute;top:16px;right:20px;font-family:Inter,sans-serif;font-weight:800;font-size:38px;line-height:1;color:rgba(37,99,235,0.18)">05</span>
+        <div style="width:46px;height:46px;border-radius:14px;background:#FFFFFF;color:#2563EB;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 2px 8px rgba(37,99,235,0.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4 12 14.01l-3-3"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+        <p style="margin:0 0 6px;font-size:16px;font-weight:700;color:#0F172A">納品</p>
+        <p style="margin:0;font-size:13px;line-height:1.9;color:#475569">SNSにそのまま投稿できる形でお渡しします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="選ばれる理由" style="background:#FFFFFF">
+  <div style="max-width:1120px;margin:0 auto;padding:100px 24px" data-reveal="features">
+    <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:48px;align-items:start">
+      <div class="reason-sticky">
+        <p style="margin:0 0 12px;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif">REASON</p>
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em;line-height:1.5">選ばれる理由</h2>
+        <p style="margin:0 0 36px;font-size:15px;line-height:2.1;color:#555555;text-wrap:pretty">1つの企画に対して、複数の「フック（冒頭の掴み）」パターンを設計できるのがmotion-hookの強みです。どのフックが刺さるかを比べながら、広告データのテストにも活かせます。</p>
+        <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;min-height:52px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.28)" style-hover="background:#1D4ED8;color:#FFFFFF">
+          無料で相談してみる
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <p style="margin:16px 0 0;font-size:12px;color:#94A3B8;line-height:1.8">ご相談・お見積りは無料です。<br>押し売りは一切いたしません。</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:flex-start;gap:18px;padding:22px 22px;background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:18px;box-shadow:0 6px 24px rgba(15,23,42,0.05)">
+          <span style="flex:none;width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></span>
+          <div>
+            <p style="margin:0 0 5px;font-size:16px;font-weight:700;color:#0F172A"><span style="font-family:Inter,sans-serif;font-weight:800;font-size:12px;color:#2563EB;letter-spacing:0.08em;margin-right:10px;vertical-align:1px">01</span>フックの種類・パターンを複数ご提案</p>
+            <p style="margin:0;font-size:13px;line-height:1.9;color:#475569">同じ素材でも、冒頭のフックを変えた違う動画をご提案。どれが刺さるかを試せます。</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:18px;padding:22px 22px;background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:18px;box-shadow:0 6px 24px rgba(15,23,42,0.05)">
+          <span style="flex:none;width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>
+          <div>
+            <p style="margin:0 0 5px;font-size:16px;font-weight:700;color:#0F172A"><span style="font-family:Inter,sans-serif;font-weight:800;font-size:12px;color:#2563EB;letter-spacing:0.08em;margin-right:10px;vertical-align:1px">02</span>広告データのテストに使える</p>
+            <p style="margin:0;font-size:13px;line-height:1.9;color:#475569">フック違いの複数パターンでABテストでき、広告運用の改善につながります。</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:18px;padding:22px 22px;background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:18px;box-shadow:0 6px 24px rgba(15,23,42,0.05)">
+          <span style="flex:none;width:46px;height:46px;border-radius:14px;background:#EFF3FE;color:#2563EB;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 18V6"></path></svg></span>
+          <div>
+            <p style="margin:0 0 5px;font-size:16px;font-weight:700;color:#0F172A"><span style="font-family:Inter,sans-serif;font-weight:800;font-size:12px;color:#2563EB;letter-spacing:0.08em;margin-right:10px;vertical-align:1px">03</span>AI活用で1本あたりのコストを抑制</p>
+            <p style="margin:0;font-size:13px;line-height:1.9;color:#475569">AI映像技術で制作工程を効率化。従来の動画制作より、続けやすい価格でご提供できます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="料金プラン" style="background:#F8F6F2">
+  <div style="max-width:1120px;margin:0 auto;padding:100px 24px" data-reveal="pricing">
+    <p style="margin:0 0 12px;text-align:center;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif">PRICING</p>
+    <h2 style="margin:0 0 16px;text-align:center;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em">料金プラン</h2>
+    <p style="margin:0 auto 40px;max-width:600px;text-align:center;font-size:15px;line-height:2;color:#555555">AI活用による効率的な制作で、続けやすい価格を実現。<br>商材の状況やご予算に合わせて、まずは1本からご相談いただけます。</p>
+    <div style="max-width:1020px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px;align-items:stretch">
+      <div style="background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:22px;padding:36px 30px;display:flex;flex-direction:column">
+        <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#2563EB;font-family:Inter,sans-serif;letter-spacing:0.1em">LIGHT</p>
+        <p style="margin:0 0 14px;font-size:20px;font-weight:900;color:#0F172A">ライトプラン</p>
+        <p style="margin:0 0 18px;font-size:13px;line-height:1.9;color:#555555">まずは1本、ショート動画を試してみたい方に。</p>
+        <p style="margin:0 0 22px"><span style="font-family:Inter,sans-serif;font-size:34px;font-weight:800;color:#0F172A">¥40,000</span><span style="font-size:13px;color:#64748B;font-weight:600">〜 / 1本</span></p>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px">
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>縦型ショート動画 1本</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>フック 1種類</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>お手持ちの素材から制作</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>テロップ・BGM付き</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>修正1回</p>
+        </div>
+        <a href="無料相談.dc.html?plan=light" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(15,23,42,0.18);color:#0F172A;background:#FFFFFF;font-weight:700;font-size:14px;padding:14px 24px;border-radius:999px;text-decoration:none;min-height:48px;box-sizing:border-box" style-hover="border-color:#2563EB;color:#2563EB">このプランで相談する</a>
+      </div>
+      <div style="position:relative;background:#FFFFFF;border:2px solid #2563EB;border-radius:22px;padding:44px 30px 36px;display:flex;flex-direction:column;box-shadow:0 16px 44px rgba(37,99,235,0.14)">
+        <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:0.06em;padding:7px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(37,99,235,0.35)">いちばん選ばれています</span>
+        <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#2563EB;font-family:Inter,sans-serif;letter-spacing:0.1em">STANDARD</p>
+        <p style="margin:0 0 14px;font-size:20px;font-weight:900;color:#0F172A">スタンダードプラン</p>
+        <p style="margin:0 0 18px;font-size:13px;line-height:1.9;color:#555555">SNSを継続的に育てたいブランドに。毎月の投稿をお任せ。</p>
+        <p style="margin:0 0 22px"><span style="font-family:Inter,sans-serif;font-size:34px;font-weight:800;color:#0F172A">¥130,000</span><span style="font-size:13px;color:#64748B;font-weight:600">〜 / 月（3本）</span></p>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px">
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>縦型ショート動画 月3本</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>フック 2種類</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>企画・構成のご提案つき</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>テロップ・BGM・ナレーション</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>投稿文・ハッシュタグのご提案</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>修正1回</p>
+        </div>
+        <a href="無料相談.dc.html?plan=standard" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:14px;padding:14px 24px;border-radius:999px;text-decoration:none;min-height:48px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.4)" style-hover="background:#1D4ED8;color:#FFFFFF">このプランで相談する</a>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(15,23,42,0.08);border-radius:22px;padding:36px 30px;display:flex;flex-direction:column">
+        <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#2563EB;font-family:Inter,sans-serif;letter-spacing:0.1em">PREMIUM</p>
+        <p style="margin:0 0 14px;font-size:20px;font-weight:900;color:#0F172A">プレミアムプラン</p>
+        <p style="margin:0 0 18px;font-size:13px;line-height:1.9;color:#555555">企画から広告用動画まで、まるごとお任せしたい方に。</p>
+        <p style="margin:0 0 22px"><span style="font-family:Inter,sans-serif;font-size:34px;font-weight:800;color:#0F172A">¥250,000</span><span style="font-size:13px;color:#64748B;font-weight:600">〜 / 月</span></p>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px">
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>縦型ショート動画 月5本〜</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>フック 3種類</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>テロップ・BGM・ナレーション</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>広告用動画の制作</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>SNS活用の定例ご相談</p>
+          <p style="margin:0;display:flex;align-items:center;gap:9px;font-size:13px;color:#334155"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>修正2回</p>
+        </div>
+        <a href="無料相談.dc.html?plan=premium" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(15,23,42,0.18);color:#0F172A;background:#FFFFFF;font-weight:700;font-size:14px;padding:14px 24px;border-radius:999px;text-decoration:none;min-height:48px;box-sizing:border-box" style-hover="border-color:#2563EB;color:#2563EB">このプランで相談する</a>
+      </div>
+    </div>
+    <p style="margin:28px auto 0;max-width:600px;text-align:center;font-size:12px;line-height:1.9;color:#94A3B8">※料金は目安です。商材の状況・素材の有無・本数に応じて、無料相談時に正式なお見積りをご提示します。</p>
+    <div style="margin-top:36px;display:flex;justify-content:center">
+      <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#0F172A;color:#FFFFFF;font-weight:700;font-size:15px;padding:15px 34px;border-radius:999px;text-decoration:none;min-height:52px;box-sizing:border-box;box-shadow:0 8px 24px rgba(15,23,42,0.2)" style-hover="background:#1E293B;color:#FFFFFF">
+        どのプランが合うか、無料で相談する
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="FAQ" style="background:#FFFFFF">
+  <div style="max-width:1000px;margin:0 auto;padding:100px 24px" data-reveal="faq">
+    <p style="margin:0 0 12px;text-align:center;color:#2563EB;font-weight:700;font-size:13px;letter-spacing:0.14em;font-family:Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+      FAQ
+    </p>
+    <h2 style="margin:0 0 48px;text-align:center;font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#0F172A;letter-spacing:0.02em">よくあるご質問</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:12px;align-items:start">
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">AI動画は不自然になりませんか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">実写の素材と組み合わせ、違和感のない仕上がりになるよう調整します。事前にサンプルをご確認いただけるので、ご安心ください。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">撮影は必要ですか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">撮影は不要です。お手持ちの写真や動画素材から制作できます。スマホで撮影した素材でも大丈夫です。素材が少ない場合は、AI映像技術で自然に補います。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">修正はできますか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">はい、対応いたします。修正の回数や範囲は、事前のお見積り時にすり合わせのうえ進めますので、後から追加費用に驚くことはありません。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">SNSの投稿も相談できますか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">投稿文・ハッシュタグ・投稿のタイミングなど、SNS活用のご相談も可能です。動画をどう活かすかまで含めてサポートします。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">納期はどのくらいですか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">内容にもよりますが、目安は1〜2週間程度です。繁忙期前やキャンペーンなどお急ぎの場合は、お気軽にご相談ください。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">料金はどのくらいですか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">本数や内容に応じて個別にお見積りしています。無料相談の際に、ご予算に合わせたプランをご提示しますので、まずはお気軽にどうぞ。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">SNSや動画が初めてでも大丈夫ですか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">大丈夫です。ヒアリングから納品まで、専門用語を使わず丁寧にご説明しながら進めます。初めての方こそ、お気軽にご相談ください。</p>
+      </details>
+      <details style="background:#F8F6F2;border-radius:14px;overflow:hidden">
+        <summary style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-size:14px;font-weight:700;color:#0F172A;line-height:1.7"><span style="flex:none;color:#2563EB;font-family:Inter,sans-serif;font-weight:800">Q</span><span style="flex:1">どの業種に対応していますか？</span><span data-faq-icon="" style="flex:none;color:#94A3B8;display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s ease"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></summary>
+        <p style="margin:0;padding:0 18px 18px 44px;font-size:13px;line-height:1.95;color:#555555">美容・コスメ・飲食・店舗・EC・アプリ・観光施設など、SNS広告やPR動画を活用したい事業者様に幅広く対応しています。</p>
+      </details>
+    </div>
+    <p style="margin:36px auto 0;text-align:center;font-size:14px;line-height:2;color:#555555">解決しなかった疑問は、<a href="無料相談.dc.html" style="color:#2563EB;font-weight:700;text-decoration:underline;text-underline-offset:3px">無料相談</a>で直接お聞きください。</p>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="最終CTA" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#FFFFFF 0%,#E8F0FE 100%)">
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 120% at 50% 110%, rgba(37,99,235,0.14) 0%, rgba(255,255,255,0) 60%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:780px;margin:0 auto;padding:150px 24px 130px;text-align:center" data-reveal="contact">
+    <span style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:18px;background:#FFFFFF;color:#2563EB;margin:0 0 24px;box-shadow:0 6px 20px rgba(37,99,235,0.15)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></span>
+    <h2 style="margin:0 0 20px;font-size:clamp(26px,5vw,42px);font-weight:900;color:#0F172A;line-height:1.6;letter-spacing:0.02em">商材の魅力を、<br>もっと多くの人へ届けませんか？</h2>
+    <p style="margin:0 0 44px;font-size:15px;line-height:2;color:#555555">まずはお気軽にご相談ください。ヒアリングのうえ、商材に合わせた動画をご提案します。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <a href="無料相談.dc.html" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:16px;padding:18px 40px;border-radius:999px;text-decoration:none;min-height:56px;box-sizing:border-box;box-shadow:0 8px 24px rgba(37,99,235,0.4)" style-hover="background:#1D4ED8;color:#FFFFFF">
+        無料相談する
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a href="#works" style="display:inline-flex;align-items:center;gap:9px;justify-content:center;border:1px solid rgba(15,23,42,0.18);color:#0F172A;background:#FFFFFF;font-weight:700;font-size:16px;padding:18px 40px;border-radius:999px;text-decoration:none;min-height:56px;box-sizing:border-box" style-hover="border-color:#2563EB;color:#2563EB">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        制作サンプルを見る
+      </a>
+    </div>
+    <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center">
+      <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#475569"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="m9 11 3 3L22 4"></path></svg>ご相談・お見積り無料</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#475569"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="m9 11 3 3L22 4"></path></svg>全国オンライン対応</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#475569"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="m9 11 3 3L22 4"></path></svg>押し売りは一切なし</span>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="フッター" class="page-footer" style="background:#0F172A;border-top:1px solid rgba(255,255,255,0.1)">
+  <div style="max-width:1120px;margin:0 auto;padding:48px 24px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start">
+    <div>
+      <p style="margin:0 0 10px;font-family:Inter,'Noto Sans JP',sans-serif;font-weight:800;letter-spacing:0.04em;color:#FFFFFF;font-size:17px">motion-hook</p>
+      <p style="margin:0;font-size:12px;line-height:2;color:rgba(255,255,255,0.6)">屋号：motion-hook<br>所在地：大阪府松原市上田1-4-8<br>お問い合わせ：after.motion018@gmail.com<br></p>
+    </div>
+    <nav style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center">
+      <a href="https://www.instagram.com/motionhook_yano/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>Instagram</a>
+      <a href="プライバシーポリシー.dc.html" style="font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF">プライバシーポリシー</a>
+      <a href="利用規約.dc.html" style="font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none" style-hover="color:#FFFFFF">利用規約</a>
+    </nav>
+  </div>
+  <p style="margin:0;padding:0 24px 28px;text-align:center;font-size:11px;color:rgba(255,255,255,0.4);font-family:Inter,sans-serif">© 2026 motion-hook</p>
+</footer>
+
+<div onClick="{{ closeVideo }}" style="{{ lightboxWrapStyle }}">
+  <div onClick="{{ stopClick }}" style="position:relative;width:min(340px,86vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)">
+    <sc-if value="{{ lightboxIsVideo }}" hint-placeholder-val="{{ true }}">
+      <video id="lightbox-video" controls="{{ true }}" playsInline="{{ true }}" preload="auto" poster="{{ lightboxPoster }}" style="width:100%;height:100%;object-fit:cover;background:#000000"></video>
+    </sc-if>
+    <sc-if value="{{ lightboxIsDrive }}" hint-placeholder-val="{{ false }}">
+      <iframe src="{{ driveEmbedSrc }}" style="width:100%;height:100%;border:none;background:#000000" allow="autoplay" allowFullScreen="{{ true }}"></iframe>
+    </sc-if>
+  </div>
+  <button onClick="{{ closeVideo }}" aria-label="閉じる" style="position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.16);border:none;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,0.28)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+  </button>
+</div>
+
+<sc-if value="{{ showFloating }}" hint-placeholder-val="{{ false }}">
+  <a href="無料相談.dc.html" class="float-cta" style="position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#2563EB;color:#FFFFFF;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px;text-decoration:none;min-height:52px;box-sizing:border-box;box-shadow:0 12px 32px rgba(15,23,42,0.4)" style-hover="background:#1D4ED8;color:#FFFFFF">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+    無料相談する
+  </a>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;heroOverlay&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 0.28, &quot;min&quot;: 0.15, &quot;max&quot;: 0.6, &quot;step&quot;: 0.02, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Hero&quot;, &quot;unit&quot;: &quot;&quot;},
+  &quot;showFloatingCta&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;CTA&quot;}
+}">
+class Component extends DCLogic {
+  state = { video: null };
+  componentDidMount() {
+    this._onKey = (e) => {
+      if (e.key === 'Escape' && this.state.video) {
+        const v = document.getElementById('lightbox-video');
+        if (v) { try { v.pause(); } catch (err) {} }
+        this.setState({ video: null });
+      }
+    };
+    document.addEventListener('keydown', this._onKey);
+    const v = document.getElementById('hero-video');
+    if (v) {
+      v.muted = true;
+      v.setAttribute('muted', '');
+      v.playsInline = true;
+      const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      if (v.readyState >= 2) tryPlay(); else v.addEventListener('loadeddata', tryPlay, { once: true });
+    }
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top > window.innerHeight * 0.9) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        io.observe(el);
+      }
+    });
+    this._io = io;
+    this._revealTimer = setTimeout(() => {
+      els.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      io.disconnect();
+    }, 6000);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._revealTimer) clearTimeout(this._revealTimer); if (this._onKey) document.removeEventListener('keydown', this._onKey); }
+  playLightbox(src, poster) {
+    // Set state for UI, but also drive the persistent <video> element directly and
+    // synchronously here (inside the click handler) so the play() call stays inside
+    // the user-gesture window — deferring it to a later render/effect makes browsers
+    // block autoplay of unmuted video.
+    this.setState({ video: { src: src, poster: poster } });
+    const v = document.getElementById('lightbox-video');
+    if (v) {
+      v.pause();
+      v.src = src;
+      v.load();
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    }
+  }
+  renderVals() {
+    const base = this.props.heroOverlay ?? 0.28;
+    return {
+      heroOverlay: base,
+      heroOverlayTop: Math.max(0, base - 0.1).toFixed(2),
+      heroOverlayBottom: Math.min(0.85, base + 0.25).toFixed(2),
+      showFloating: this.props.showFloatingCta ?? true,
+      lightboxOpen: !!this.state.video,
+      lightboxIsDrive: !!(this.state.video && this.state.video.drive),
+      lightboxIsVideo: !!(this.state.video && !this.state.video.drive),
+      driveEmbedSrc: (this.state.video && this.state.video.drive) ? ('https://drive.google.com/file/d/' + this.state.video.id + '/preview') : '',
+      stopClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
+      lightboxWrapStyle: this.state.video
+        ? 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:1;pointer-events:auto;transition:opacity 0.2s ease'
+        : 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.2s ease',
+      lightboxPoster: this.state.video ? this.state.video.poster : '',
+      openDriveTop: () => {
+        const v = document.getElementById('lightbox-video');
+        if (v) { try { v.pause(); } catch (e) {} }
+        this.setState({ video: { drive: true, id: '15UtoJKohD6Bk10LUcbU1YjhV6DuVwLFG' } });
+      },
+      openDiving: () => this.playLightbox('uploads/CLAUDE_SITE_assyuku.mp4', 'thumbs/diving_new.png'),
+      openCola: () => this.playLightbox('uploads/cola_comp.mp4', 'thumbs/cola.png'),
+      openKeshosui: () => this.playLightbox('uploads/keshosui.mp4', 'thumbs/keshosui.png'),
+      openHifumiru: () => this.playLightbox('uploads/hifumiru.mp4', 'thumbs/hifumiru.png'),
+      openComp: () => this.playLightbox('uploads/comp.mp4', 'thumbs/comp.png'),
+      closeVideo: () => {
+        const v = document.getElementById('lightbox-video');
+        if (v) { try { v.pause(); } catch (e) {} }
+        this.setState({ video: null });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
