@@ -545,7 +545,8 @@
 
 <div onClick="{{ closeVideo }}" style="{{ lightboxWrapStyle }}">
   <div onClick="{{ stopClick }}" style="position:relative;width:min(340px,86vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)">
-    <video id="lightbox-video" controls="{{ true }}" playsInline="{{ true }}" preload="auto" poster="{{ lightboxPoster }}" style="width:100%;height:100%;object-fit:cover;background:#000000"></video>
+    <video id="lightbox-video" controls="{{ true }}" playsInline="{{ true }}" preload="auto" poster="{{ lightboxPoster }}" style="{{ lightboxVideoStyle }}"></video>
+    <iframe id="lightbox-drive" src="{{ driveEmbedSrc }}" style="{{ lightboxDriveStyle }}" allow="autoplay" allowFullScreen="{{ true }}"></iframe>
   </div>
   <button onClick="{{ closeVideo }}" aria-label="閉じる" style="position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.16);border:none;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,0.28)">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
@@ -616,7 +617,7 @@ class Component extends DCLogic {
     // synchronously here (inside the click handler) so the play() call stays inside
     // the user-gesture window — deferring it to a later render/effect makes browsers
     // block autoplay of unmuted video.
-    this.setState({ video: { src: src, poster: poster } });
+    this.setState({ video: { src: src, poster: poster, drive: false } });
     const v = document.getElementById('lightbox-video');
     if (v) {
       v.pause();
@@ -626,6 +627,11 @@ class Component extends DCLogic {
       if (p && p.catch) p.catch(() => {});
     }
   }
+  playDrive(id) {
+    const v = document.getElementById('lightbox-video');
+    if (v) { try { v.pause(); v.removeAttribute('src'); v.load(); } catch (e) {} }
+    this.setState({ video: { drive: true, driveId: id } });
+  }
   renderVals() {
     const base = this.props.heroOverlay ?? 0.28;
     return {
@@ -634,12 +640,15 @@ class Component extends DCLogic {
       heroOverlayBottom: Math.min(0.85, base + 0.25).toFixed(2),
       showFloating: this.props.showFloatingCta ?? true,
       lightboxOpen: !!this.state.video,
+      lightboxVideoStyle: 'width:100%;height:100%;object-fit:cover;background:#000000;display:' + ((this.state.video && this.state.video.drive) ? 'none' : 'block'),
+      lightboxDriveStyle: 'width:100%;height:100%;border:none;background:#000000;display:' + ((this.state.video && this.state.video.drive) ? 'block' : 'none'),
+      driveEmbedSrc: (this.state.video && this.state.video.drive) ? ('https://drive.google.com/file/d/' + this.state.video.driveId + '/preview') : '',
       stopClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
       lightboxWrapStyle: this.state.video
         ? 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:1;pointer-events:auto;transition:opacity 0.2s ease'
         : 'position:fixed;inset:0;z-index:90;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.2s ease',
       lightboxPoster: this.state.video ? this.state.video.poster : '',
-      openDriveTop: () => this.playLightbox('uploads/SITE-v02.mp4', ''),
+      openDriveTop: () => this.playDrive('1CIJJ1bQxQ4tV7Jeredl8jMYZ59guOGEt'),
       openDiving: () => this.playLightbox('uploads/CLAUDE_SITE_assyuku.mp4', 'thumbs/diving_new.png'),
       openCola: () => this.playLightbox('uploads/cola_comp.mp4', 'thumbs/cola.png'),
       openKeshosui: () => this.playLightbox('uploads/keshosui.mp4', 'thumbs/keshosui.png'),
