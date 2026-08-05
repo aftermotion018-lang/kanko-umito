@@ -76,6 +76,13 @@
   }
   .work-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(15,23,42,0.16); }
   .work-card:hover [data-play] { transform: scale(1.08); }
+  .work-card:active { transform: translateY(-1px) scale(0.98); }
+  a[style*="border-radius:999px"], button[style*="border-radius:50%"], a[style*="border-radius: 999px"], button[style*="border-radius: 50%"] { transition: transform 0.18s cubic-bezier(0.22,1,0.36,1), filter 0.18s ease, opacity 0.18s ease; }
+  a[style*="border-radius:999px"]:hover, button[style*="border-radius:50%"]:hover, a[style*="border-radius: 999px"]:hover, button[style*="border-radius: 50%"]:hover { transform: translateY(-2px); filter: brightness(1.06); }
+  a[style*="border-radius:999px"]:active, button[style*="border-radius:50%"]:active, a[style*="border-radius: 999px"]:active, button[style*="border-radius: 50%"]:active { transform: translateY(0) scale(0.95); filter: brightness(0.96); }
+  summary { transition: background-color 0.2s ease; }
+  summary:hover { background: rgba(37,99,235,0.05); }
+  summary:active { background: rgba(37,99,235,0.09); }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .work-card { transition: none; } .hero-rise-1, .hero-rise-2, .hero-rise-3, .hero-rise-4, .hero-vid { animation: none; } .hero-marker { animation: none; } .hero-char { animation: none; opacity: 1; } }
 </style>
 </helmet>
@@ -208,19 +215,19 @@
         </div>
       </div>
 
-      <div class="work-card" onClick="{{ openComp }}" role="button" tabIndex="0" aria-label="動画サンプルを再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
-        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('thumbs/comp.png') center/cover">
+      <div class="work-card" onClick="{{ openSerumUgc }}" role="button" tabIndex="0" aria-label="美容液UGC広告を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('uploads/samune_UGC_1.1.1-2b50bc18.png') center/cover">
           <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
-            ショート
+            UGC
           </div>
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
             <svg data-play="" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 4px 12px rgba(15,23,42,0.6));transition:transform 0.35s ease"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
           </div>
         </div>
         <div style="padding:14px 15px 16px">
-          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">フック重視のショート広告</p>
-          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">冒頭3秒で引き込む構成例</p>
+          <p style="margin:0;font-size:14px;font-weight:700;color:#0F172A;line-height:1.6">美容液UGC広告</p>
+          <p style="margin:5px 0 0;font-size:12px;color:#64748B;line-height:1.7">実演者視点で信頼感を伝えるUGC風広告</p>
         </div>
       </div>
 
@@ -418,7 +425,7 @@
         <a href="無料相談.dc.html?plan=light" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(15,23,42,0.18);color:#0F172A;background:#FFFFFF;font-weight:700;font-size:14px;padding:14px 24px;border-radius:999px;text-decoration:none;min-height:48px;box-sizing:border-box" style-hover="border-color:#2563EB;color:#2563EB">このプランで相談する</a>
       </div>
       <div style="position:relative;background:#FFFFFF;border:2px solid #2563EB;border-radius:22px;padding:44px 30px 36px;display:flex;flex-direction:column;box-shadow:0 16px 44px rgba(37,99,235,0.14)">
-        <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:0.06em;padding:7px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(37,99,235,0.35)">いちばん選ばれています</span>
+        <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:0.06em;padding:7px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(37,99,235,0.35)">おすすめ</span>
         <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#2563EB;font-family:Inter,sans-serif;letter-spacing:0.1em">STANDARD</p>
         <p style="margin:0 0 14px;font-size:20px;font-weight:900;color:#0F172A">スタンダードプラン</p>
         <p style="margin:0 0 18px;font-size:13px;line-height:1.9;color:#555555">SNSを継続的に育てたいブランドに。毎月の投稿をお任せ。</p>
@@ -617,10 +624,12 @@ class Component extends DCLogic {
     // synchronously here (inside the click handler) so the play() call stays inside
     // the user-gesture window — deferring it to a later render/effect makes browsers
     // block autoplay of unmuted video.
-    this.setState({ video: { src: src, poster: poster, drive: false } });
+    this.setState({ video: { src: src, poster: poster, drive: false }, videoReady: false });
     const v = document.getElementById('lightbox-video');
     if (v) {
       v.pause();
+      const showWhenReady = () => { this.setState({ videoReady: true }); v.removeEventListener('playing', showWhenReady); };
+      v.addEventListener('playing', showWhenReady);
       v.src = src;
       v.load();
       const p = v.play();
@@ -640,7 +649,7 @@ class Component extends DCLogic {
       heroOverlayBottom: Math.min(0.85, base + 0.25).toFixed(2),
       showFloating: this.props.showFloatingCta ?? true,
       lightboxOpen: !!this.state.video,
-      lightboxVideoStyle: 'width:100%;height:100%;object-fit:cover;background:#000000;display:' + ((this.state.video && this.state.video.drive) ? 'none' : 'block'),
+      lightboxVideoStyle: 'width:100%;height:100%;object-fit:cover;background:#000000;opacity:' + ((this.state.videoReady === false) ? '0' : '1') + ';transition:opacity 0.15s ease;display:' + ((this.state.video && this.state.video.drive) ? 'none' : 'block'),
       lightboxDriveStyle: 'width:100%;height:100%;border:none;background:#000000;display:' + ((this.state.video && this.state.video.drive) ? 'block' : 'none'),
       driveEmbedSrc: (this.state.video && this.state.video.drive) ? ('https://drive.google.com/file/d/' + this.state.video.driveId + '/preview') : '',
       stopClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
@@ -651,9 +660,9 @@ class Component extends DCLogic {
       openDriveTop: () => this.playDrive('1CIJJ1bQxQ4tV7Jeredl8jMYZ59guOGEt'),
       openDiving: () => this.playLightbox('uploads/CLAUDE_SITE_assyuku.mp4', 'thumbs/diving_new.png'),
       openCola: () => this.playLightbox('uploads/cola_comp.mp4', 'thumbs/cola.png'),
-      openKeshosui: () => this.playLightbox('uploads/keshosui.mp4', 'thumbs/keshosui.png'),
+      openKeshosui: () => this.playLightbox('uploads/UGC_20MB_site_portfolio.mp4', 'thumbs/keshosui.png'),
       openHifumiru: () => this.playLightbox('uploads/hifumiru.mp4', 'thumbs/hifumiru.png'),
-      openComp: () => this.playLightbox('uploads/comp.mp4', 'thumbs/comp.png'),
+      openSerumUgc: () => this.playLightbox('uploads/UGC_20MB_site_portfolio-8ad50412.mp4', 'thumbs/comp.png'),
       closeVideo: () => {
         const v = document.getElementById('lightbox-video');
         if (v) { try { v.pause(); } catch (e) {} }
