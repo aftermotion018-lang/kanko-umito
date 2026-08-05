@@ -216,7 +216,7 @@
       </div>
 
       <div class="work-card" onClick="{{ openSerumUgc }}" role="button" tabIndex="0" aria-label="美容液UGC広告を再生" style="background:#FFFFFF;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08);border:1px solid rgba(15,23,42,0.05);cursor:pointer">
-        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('uploads/samune_UGC_1.1.1-2b50bc18.png') center/cover">
+        <div style="position:relative;aspect-ratio:9/16;background:#0F172A url('uploads/samune_UGC_1.1.1-2b50bc18-2b50bc18.png') center/cover">
           <div style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,0.55);backdrop-filter:blur(6px);color:#FFFFFF;font-size:11px;font-weight:700">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>
             UGC
@@ -662,7 +662,7 @@ class Component extends DCLogic {
       openCola: () => this.playLightbox('uploads/cola_comp.mp4', 'thumbs/cola.png'),
       openKeshosui: () => this.playLightbox('uploads/UGC_20MB_site_portfolio.mp4', 'thumbs/keshosui.png'),
       openHifumiru: () => this.playLightbox('uploads/hifumiru.mp4', 'thumbs/hifumiru.png'),
-      openSerumUgc: () => this.playLightbox('uploads/UGC_20MB_site_portfolio-8ad50412.mp4', 'uploads/samune_UGC_1.1.1-2b50bc18.png'),
+      openSerumUgc: () => this.playLightbox('uploads/UGC_20MB_site_portfolio-8ad50412.mp4', 'uploads/samune_UGC_1.1.1-2b50bc18-2b50bc18.png'),
       closeVideo: () => {
         const v = document.getElementById('lightbox-video');
         if (v) { try { v.pause(); } catch (e) {} }
